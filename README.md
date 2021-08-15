@@ -1,4 +1,4 @@
-                                                                              order-matcher
+                                                                Order-matcher
 
 Problem Description:
 
@@ -69,3 +69,8 @@ the top.
 Implementation
 The OrderMatcher should be implemented in Java (preferred) or C++ and should be possible to
 compile and execute on Linux.
+
+Solution:
+This problem can be solved by using appropriate GOF pattern(Strategy Pattern or Command Pattern) and a proper data-structure for buy and sell orders.
+
+In current implementation Priority Queue is used. This will be used to fetch max and min price in O(1) time. 
