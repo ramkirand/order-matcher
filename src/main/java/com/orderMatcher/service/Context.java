@@ -1,17 +1,13 @@
 package com.orderMatcher.service;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-@Getter
+@Getter @AllArgsConstructor
 public class Context {
+    private TradingStrategy tradingStrategy;
 
-	private TradingStrategy tradingStrategy;
-
-	public Context(TradingStrategy tradingStrategy) {
-		this.tradingStrategy = tradingStrategy;
-	}
-
-	public void executeStrategy(String command) {
-		tradingStrategy.execute(command);
-	}
+    public void executeStrategy(String command) {
+        tradingStrategy.execute(command);
+    }
 }

@@ -15,7 +15,7 @@ import java.util.Scanner;
     public static void main(String[] args) {
         SpringApplication.run(OrderMatcherApplication.class, args);
         Scanner scanner = new Scanner(System.in);
-        System.out.println("example:" + "BUY 100@50," + "BUY 1000@25," + "SELL 500@35" + "exit to end the program");
+        System.out.println("example:" + "BUY 100@50," + "BUY 1000@25," + "SELL 500@35" + "  exit to end the program");
         while (true) {
             System.out.println("Enter input command");
             String input = scanner.next();
@@ -26,7 +26,7 @@ import java.util.Scanner;
             } else if (input.startsWith("PRINT")) {
                 new Context(new PrintStocks()).executeStrategy(input);
             } else {
-                System.out.println("Invalid input command");
+                System.out.println("Invalid input command or end");
                 System.exit(1);
             }
         }
