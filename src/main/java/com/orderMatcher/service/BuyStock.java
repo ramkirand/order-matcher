@@ -10,9 +10,8 @@ public class BuyStock implements TradingStrategy {
 	@Override
 	public void execute(String inputCommand) {
 		Stock buyOrder = null;
-		String data = inputCommand.split(Constants.SPACE)[1];
-		int buyOrderPrice = Integer.parseInt(data.split(Constants.AT)[1]);
-		int buyOrderVolume = Integer.parseInt(data.split(Constants.AT)[0]);
+		int buyOrderPrice = Integer.parseInt(inputCommand.split(Constants.AT)[1]);
+		int buyOrderVolume = Integer.parseInt(inputCommand.split(Constants.AT)[0]);
 		if (sellOrderBookMinHeap.isEmpty()) {
 			buyOrder = new Stock();
 			buyOrder.setPrice(buyOrderPrice);
