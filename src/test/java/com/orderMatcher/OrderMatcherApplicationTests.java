@@ -8,9 +8,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
 class OrderMatcherApplicationTests {
-	
-	@Test
-	void contextLoads() {
-	}
 
+  @Test
+  void contextLoads() {}
 }
