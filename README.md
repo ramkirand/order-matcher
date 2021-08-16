@@ -79,3 +79,34 @@ Best practices covered:
 1. Seperation of concerns
 2. SOLID design principles
 3. GOF pattern
+
+
+Sample output:
+
+__      __        _                              _____           _____                   _   _
+ \ \    / /  ___  | |  __   ___   _ __    ___    |_   _|  ___    |_   _|  _ _   __ _   __| | (_)  _ _    __ _
+  \ \/\/ /  / -_) | | / _| / _ \ | '  \  / -_)     | |   / _ \     | |   | '_| / _` | / _` | | | | ' \  / _` |
+   \_/\_/   \___| |_| \__| \___/ |_|_|_| \___|     |_|   \___/     |_|   |_|   \__,_| \__,_| |_| |_||_| \__, |
+                                                                                                        |___/
+example:BUY 100@50,BUY 1000@25,SELL 500@35  exit to end the program
+
+
+Enter input command
+SELL 100@10
+Enter input command
+SELL 100@15
+Enter input command
+BUY 120@17
+Trade 100@10
+Trade 20@15
+Enter input command
+PRINT
+Display results:
+SELL 80@15
+
+Enter input command
+exit
+Invalid input command or end
+
+Process finished with exit code 1
+
