@@ -1,33 +1,40 @@
 package com.orderMatcher;
 
-import lombok.extern.slf4j.Slf4j;
+import com.orderMatcher.serviceImpl.BuyOrder;
+import com.orderMatcher.serviceImpl.PrintStockOrders;
+import com.orderMatcher.serviceImpl.SellOrder;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import com.orderMatcher.service.BuyStock;
 import com.orderMatcher.service.Context;
-import com.orderMatcher.service.PrintStocks;
-import com.orderMatcher.service.SellStock;
 
 import java.util.Scanner;
 
-@Slf4j @SpringBootApplication public class OrderMatcherApplication {
+@SpringBootApplication
+public class OrderMatcherApplication {
+
     public static void main(String[] args) {
         SpringApplication.run(OrderMatcherApplication.class, args);
+        tradingApplication();
+    }
+
+    private static void tradingApplication() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("example:" + "BUY 100@50," + "BUY 1000@25," + "SELL 500@35" + "  exit to end the program");
         while (true) {
-            System.out.println("Enter input command");
+            System.out.println(Constants.ENTER_INPUT_COMMAND);
             String input = scanner.next();
-            if (input.startsWith("BUY")) {
-                new Context(new BuyStock()).executeStrategy(scanner.next());
-            } else if (input.startsWith("SELL")) {
-                new Context(new SellStock()).executeStrategy(scanner.next());
-            } else if (input.startsWith("PRINT")) {
-                new Context(new PrintStocks()).executeStrategy(input);
-            } else {
-                System.out.println("Invalid input command or end");
-                System.exit(1);
+            switch (input) {
+                case "BUY":
+                    new Context(new BuyOrder()).executeStrategy(scanner.next());
+                    break;
+                case "SELL":
+                    new Context(new SellOrder()).executeStrategy(scanner.next());
+                case "PRINT":
+                    new Context(new PrintStockOrders()).executeStrategy(input);
+                    break;
+                default:
+                    System.out.println(Constants.INVALID_INPUT_COMMAND_OR_END);
+                    System.exit(1);
+
             }
         }
     }

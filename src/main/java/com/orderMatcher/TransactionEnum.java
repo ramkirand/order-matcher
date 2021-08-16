@@ -2,13 +2,13 @@ package com.orderMatcher;
 
 public enum TransactionEnum {
     BUY("BUY"), SELL("SELL"), PRINT("PRINT");
-    private final String stockMeta;
+    private final String command;
 
     TransactionEnum(String stockMeta) {
-        this.stockMeta = stockMeta;
+        this.command = stockMeta;
     }
 
-    public String getStockMeta() {
-        return stockMeta;
+    public String getCommand() {
+        return command;
     }
 }
