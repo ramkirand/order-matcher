@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.core.annotation.Order;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.ArrayList;
@@ -19,12 +20,13 @@ public class TradingTest {
   private List<String> commandList;
 
   @BeforeEach
-  public void init(){
+  public void init() {
     commandList = new ArrayList<>();
   }
+
   @Test
+  @Order(1)
   public void shouldVerifyScenario1() {
-    commandList.clear();
     commandList.add(TransactionEnum.SELL + Constants.SPACE + "100@10");
     commandList.add(TransactionEnum.SELL + Constants.SPACE + "100@15");
     commandList.add(TransactionEnum.BUY + Constants.SPACE + "120@17");
@@ -39,11 +41,12 @@ public class TradingTest {
             new Context(new PrintStockOrder()).executeStrategy(cmd.trim());
           }
         });
+    commandList.clear();
   }
 
   @Test
+  @Order(2)
   public void shouldVerifyScenario2() {
-    commandList.clear();
     commandList.add(TransactionEnum.BUY + Constants.SPACE + "100@50");
     commandList.add(TransactionEnum.BUY + Constants.SPACE + "1000@25");
     commandList.add(TransactionEnum.SELL + Constants.SPACE + "500@35");
@@ -58,11 +61,13 @@ public class TradingTest {
             new Context(new PrintStockOrder()).executeStrategy(cmd.trim());
           }
         });
+    commandList.clear();
   }
 
   @Test
+  @Order(3)
   public void shouldVerifyScenario3() {
-    commandList.clear();
+
     commandList.add(TransactionEnum.SELL + Constants.SPACE + "100@55");
     commandList.add(TransactionEnum.SELL + Constants.SPACE + "500@67");
     commandList.add(TransactionEnum.SELL + Constants.SPACE + "200@88");
@@ -79,11 +84,13 @@ public class TradingTest {
             new Context(new PrintStockOrder()).executeStrategy(cmd.trim());
           }
         });
+    commandList.clear();
   }
 
   @Test
+  @Order(4)
   public void shouldVerifyScenario4() {
-    commandList.clear();
+
     commandList.add(TransactionEnum.BUY + Constants.SPACE + "100@10");
     commandList.add(TransactionEnum.BUY + Constants.SPACE + "100@10");
     commandList.add(TransactionEnum.SELL + Constants.SPACE + "10@10");
@@ -101,5 +108,6 @@ public class TradingTest {
             new Context(new PrintStockOrder()).executeStrategy(cmd.trim());
           }
         });
+    commandList.clear();
   }
 }
