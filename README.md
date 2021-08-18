@@ -135,56 +135,52 @@ Invalid input command or end
       commandList.add(TransactionEnum.PRINT.getCommand());
 
 
-__      __        _                              _____           _____                   _   _
- \ \    / /  ___  | |  __   ___   _ __    ___    |_   _|  ___    |_   _|  _ _   __ _   __| | (_)  _ _    __ _
-  \ \/\/ /  / -_) | | / _| / _ \ | '  \  / -_)     | |   / _ \     | |   | '_| / _` | / _` | | | | ' \  / _` |
-   \_/\_/   \___| |_| \__| \___/ |_|_|_| \___|     |_|   \___/     |_|   |_|   \__,_| \__,_| |_| |_||_| \__, |
-                                                                                                        |___/
-example:BUY 100@50,BUY 1000@25,SELL 500@35  exit to end the program
+
+    example:BUY 100@50,BUY 1000@25,SELL 500@35  exit to end the program
 
 
-Trade 100@10
-Trade 20@15
-Display results:
-SELL 80@15
+    Trade 100@10
+    Trade 20@15
+    Display results:
+    SELL 80@15
 
-Trade 80@15
-Trade 20@50
-Display results:
-SELL 480@35
-BUY 1000@25
+    Trade 80@15
+    Trade 20@50
+    Display results:
+    SELL 480@35
+    BUY 1000@25
 
-Trade 480@35
-Display results:
-SELL 100@55
-SELL 200@88
-SELL 500@67
-BUY 520@44
-BUY 1000@25
-BUY 3000@33
+    Trade 480@35
+    Display results:
+    SELL 100@55
+    SELL 200@88
+    SELL 500@67
+    BUY 520@44
+    BUY 1000@25
+    BUY 3000@33
 
-Trade 10@44
-Trade 10@44
-Display results:
-SELL 100@55
-SELL 200@88
-SELL 500@67
-BUY 500@44
-BUY 3000@33
-BUY 100@10
-BUY 100@10
-BUY 1000@25
+    Trade 10@44
+    Trade 10@44
+    Display results:
+    SELL 100@55
+    SELL 200@88
+    SELL 500@67
+    BUY 500@44
+    BUY 3000@33
+    BUY 100@10
+    BUY 100@10
+    BUY 1000@25
 
-Trade 10@44
-Display results:
-SELL 100@55
-SELL 200@88
-SELL 500@67
-BUY 490@44
-BUY 3000@33
-BUY 100@10
-BUY 100@10
-BUY 1000@25
+    Trade 10@44
+    Display results:
+    SELL 100@55
+    SELL 200@88
+    SELL 500@67
+    BUY 490@44
+    BUY 3000@33
+    BUY 100@10
+    BUY 100@10
+    BUY 1000@25
 
 
 
