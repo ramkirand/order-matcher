@@ -1,4 +1,4 @@
-package com.orderMatcher.model;
+package com.order.matcher.model;
 
 import lombok.*;
 

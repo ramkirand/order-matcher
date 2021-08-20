@@ -1,4 +1,4 @@
-package com.orderMatcher;
+package com.order.matcher;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

@@ -1,6 +1,7 @@
-package com.orderMatcher.serviceImpl;
+package com.order.matcher.serviceImpl;
 
-import com.orderMatcher.service.TradingStrategy;
+import com.order.matcher.service.TradingStrategy;
+
 import static org.assertj.core.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

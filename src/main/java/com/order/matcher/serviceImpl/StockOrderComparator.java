@@ -1,6 +1,6 @@
-package com.orderMatcher.serviceImpl;
+package com.order.matcher.serviceImpl;
 
-import com.orderMatcher.model.StockOrder;
+import com.order.matcher.model.StockOrder;
 
 import java.util.Comparator;
 

@@ -1,6 +1,6 @@
-package com.orderMatcher.serviceImpl;
+package com.order.matcher.serviceImpl;
 
-import com.orderMatcher.service.TradingStrategy;
+import com.order.matcher.service.TradingStrategy;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

@@ -1,4 +1,4 @@
-package com.orderMatcher;
+package com.order.matcher;
 
 public class Constants {
   public static final String SPACE = " ";

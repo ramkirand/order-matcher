@@ -1,8 +1,8 @@
-package com.orderMatcher.serviceImpl;
+package com.order.matcher.serviceImpl;
 
-import com.orderMatcher.Constants;
-import com.orderMatcher.model.StockOrder;
-import com.orderMatcher.service.TradingStrategy;
+import com.order.matcher.Constants;
+import com.order.matcher.model.StockOrder;
+import com.order.matcher.service.TradingStrategy;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Objects;

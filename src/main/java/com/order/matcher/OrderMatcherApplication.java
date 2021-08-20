@@ -1,12 +1,12 @@
-package com.orderMatcher;
+package com.order.matcher;
 
-import com.orderMatcher.serviceImpl.BuyStockOrder;
-import com.orderMatcher.serviceImpl.PrintStockOrder;
-import com.orderMatcher.serviceImpl.SellStockOrder;
+import com.order.matcher.serviceImpl.BuyStockOrder;
+import com.order.matcher.serviceImpl.PrintStockOrder;
+import com.order.matcher.serviceImpl.SellStockOrder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import com.orderMatcher.service.Context;
+import com.order.matcher.service.Context;
 
 import java.util.Scanner;
 

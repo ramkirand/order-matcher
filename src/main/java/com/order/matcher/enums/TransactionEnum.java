@@ -1,4 +1,4 @@
-package com.orderMatcher.enums;
+package com.order.matcher.enums;
 
 public enum TransactionEnum {
   BUY("BUY"),

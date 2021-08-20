@@ -1,12 +1,10 @@
-package com.orderMatcher.service;
+package com.order.matcher.service;
 
-import com.orderMatcher.Constants;
-import com.orderMatcher.model.StockOrder;
-import com.orderMatcher.serviceImpl.StockOrderComparator;
+import com.order.matcher.Constants;
+import com.order.matcher.model.StockOrder;
+import com.order.matcher.serviceImpl.StockOrderComparator;
 
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 import java.util.PriorityQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
