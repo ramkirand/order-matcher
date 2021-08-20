@@ -1,7 +1,7 @@
 package com.orderMatcher.serviceImpl;
 
 import com.orderMatcher.Constants;
-import com.orderMatcher.TransactionEnum;
+import com.orderMatcher.enums.TransactionEnum;
 import com.orderMatcher.service.TradingStrategy;
 
 public class PrintStockOrder implements TradingStrategy {

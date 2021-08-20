@@ -1,7 +1,7 @@
 package com.orderMatcher.serviceImpl;
 
 import com.orderMatcher.Constants;
-import com.orderMatcher.TransactionEnum;
+import com.orderMatcher.enums.TransactionEnum;
 import com.orderMatcher.service.Context;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
