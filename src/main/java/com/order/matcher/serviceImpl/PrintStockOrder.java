@@ -3,6 +3,7 @@ package com.order.matcher.serviceImpl;
 import com.order.matcher.Constants;
 import com.order.matcher.enums.TransactionEnum;
 import com.order.matcher.service.TradingStrategy;
+import com.order.matcher.util.OrderMatcherUtil;
 
 public class PrintStockOrder implements TradingStrategy {
 
@@ -19,22 +20,22 @@ public class PrintStockOrder implements TradingStrategy {
   }
 
   private void displayResults() {
-    TradingStrategy.sellStockOrderMinHeap.forEach(
+    OrderMatcherUtil.sellStockOrderMinHeap.forEach(
         sellStockOrder -> {
           if (sellStockOrder.getVolume() > 0)
             System.out.println(
                 TransactionEnum.SELL.getCommand()
-                    + Constants.SPACE
+                    + Constants.BLANK_SPACE
                     + sellStockOrder.getVolume()
                     + Constants.AT
                     + sellStockOrder.getPrice());
         });
-    TradingStrategy.buyStockOrderMaxHeap.forEach(
+    OrderMatcherUtil.buyStockOrderMaxHeap.forEach(
         buyStockOrder -> {
           if (buyStockOrder.getVolume() > 0)
             System.out.println(
                 TransactionEnum.BUY.getCommand()
-                    + Constants.SPACE
+                    + Constants.BLANK_SPACE
                     + buyStockOrder.getVolume()
                     + Constants.AT
                     + buyStockOrder.getPrice());

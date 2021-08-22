@@ -3,6 +3,7 @@ package com.order.matcher.serviceImpl;
 import com.order.matcher.Constants;
 import com.order.matcher.model.StockOrder;
 import com.order.matcher.service.TradingStrategy;
+import com.order.matcher.util.OrderMatcherUtil;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Objects;
@@ -19,22 +20,27 @@ public class BuyStockOrder implements TradingStrategy {
           StockOrder.builder()
               .price(buyOrderPrice)
               .volume(buyOrderVolume)
-              .instructionNum(TradingStrategy.instructionNum.get())
+              .stockInstructionNUmber(OrderMatcherUtil.instructionNum.get())
               .build();
-      while (!sellStockOrderMinHeap.isEmpty()
-          && Objects.requireNonNull(sellStockOrderMinHeap.peek()).getPrice() <= buyOrderPrice
+      while (!OrderMatcherUtil.sellStockOrderMinHeap.isEmpty()
+          && Objects.requireNonNull(OrderMatcherUtil.sellStockOrderMinHeap.peek()).getPrice()
+              <= buyOrderPrice
           && buyOrder.getVolume() > 0) {
-        StockOrder sellOrder = sellStockOrderMinHeap.remove();
+        StockOrder sellOrder = OrderMatcherUtil.sellStockOrderMinHeap.remove();
         // Trading logic
         int currentSale = Math.min(buyOrder.getVolume(), sellOrder.getVolume());
         System.out.println(
-            Constants.TRADE + Constants.SPACE + currentSale + Constants.AT + sellOrder.getPrice());
+            Constants.TRADE
+                + Constants.BLANK_SPACE
+                + currentSale
+                + Constants.AT
+                + sellOrder.getPrice());
         buyOrder.setVolume(buyOrder.getVolume() - currentSale);
         sellOrder.setVolume(sellOrder.getVolume() - currentSale);
-        if (sellOrder.getVolume() > 0) sellStockOrderMinHeap.add(sellOrder);
+        if (sellOrder.getVolume() > 0) OrderMatcherUtil.sellStockOrderMinHeap.add(sellOrder);
       }
       if (buyOrder.getVolume() > 0) {
-        buyStockOrderMaxHeap.add(buyOrder);
+        OrderMatcherUtil.buyStockOrderMaxHeap.add(buyOrder);
       }
     } catch (Exception ex) {
       log.info("In BuyStock: " + ex.getMessage());
@@ -42,6 +48,6 @@ public class BuyStockOrder implements TradingStrategy {
   }
 
   private void incrementInstruction() {
-    TradingStrategy.instructionNum.incrementAndGet();
+    OrderMatcherUtil.instructionNum.getAndIncrement();
   }
 }

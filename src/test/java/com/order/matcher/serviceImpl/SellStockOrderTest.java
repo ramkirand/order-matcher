@@ -1,6 +1,7 @@
 package com.order.matcher.serviceImpl;
 
 import com.order.matcher.service.TradingStrategy;
+import com.order.matcher.util.OrderMatcherUtil;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -27,9 +28,9 @@ public class SellStockOrderTest {
   @Test
   public void testExecute() {
     String command = "500@10";
-    assertThat(TradingStrategy.buyStockOrderMaxHeap.size() == 0);
+    assertThat(OrderMatcherUtil.buyStockOrderMaxHeap.size() == 0);
     tradingStrategy.execute(command);
-    assertThat(TradingStrategy.buyStockOrderMaxHeap.size() == 1);
+    assertThat(OrderMatcherUtil.buyStockOrderMaxHeap.size() == 1);
   }
 
   @Test
